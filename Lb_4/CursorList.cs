@@ -1,75 +1,61 @@
-﻿public class CursorList<T> : ICursorList<T>
-{
-    private T[] array;
-    private int cursor;
+﻿using System.Diagnostics;
 
-    public CursorList()
-    {
-        array = new T[0];
-        cursor = -1;
-    }
+public class CursorList<T> : ICursorList<T>
+{
+    private List<T> list = new List<T>();
+    private int cursor = -1;
     
-    public bool IsEmpty => array.Length == 0;
+    public bool IsEmpty => list.Count == 0;
+
+    public int Count => list.Count;
+
+    public bool CanMoveToNext() => !IsEmpty && cursor < list.Count - 1;
+
+    public bool CanMoveToPrevious() => !IsEmpty && cursor > 0;
 
     public void Append(T value)
     {
-        Array.Resize(ref array, array.Length + 1);
-        array[array.Length - 1] = value;
-        cursor = array.Length - 1;
+        cursor++;
+        list.Insert(cursor, value);
+    }
+
+    public T Delete()
+    {
+        if(IsEmpty) throw new Exception("Cannot delete element. No element available.");
+        T returnValue = list[cursor];
+        list.RemoveAt(cursor);
+        cursor--;
+        return returnValue;
     }
 
     public void MoveToNext()
     {
-        if (!IsEmpty)
+        if (!CanMoveToNext())
         {
-            if (cursor < array.Length - 1)
-            {
-                cursor++;
-                Console.WriteLine($"Moved to the next element (Element {cursor + 1}).");
-            }
-            else
-            {
-                Console.WriteLine("Cannot move to the next element. No next element available.");
-            }
+            throw new Exception("Cannot move to the next element. No next element available.");
+            return;
         }
-        else
-        {
-            Console.WriteLine("Cannot move to the next element. List is empty.");
-        }
+
+        cursor++;
     }
 
     public void MoveToPrevious()
     {
-        if (!IsEmpty)
+        if (!CanMoveToPrevious())
         {
-            if (cursor > 0)
-            {
-                cursor--;
-                Console.WriteLine($"Moved to the previous element (Element {cursor + 1}).");
-            }
-            else
-            {
-                Console.WriteLine("Cannot move to the previous element. No previous element available.");
-            }
+            throw new Exception("Cannot move to the next element. No previous element available.");
+            return;
         }
-        else
-        {
-            Console.WriteLine("Cannot move to the previous element. List is empty.");
-        }
+
+        cursor--;
     }
+
 
     public T GetCurrentElement()
     {
-        if (!IsEmpty && cursor >= 0 && cursor < array.Length)
-        {
-            return array[cursor];
-        }
-        else
-        {
-            return default(T);
-        }
+        if (IsEmpty) throw new Exception("No elements available.");
+
+        return list[cursor];
     }
-    
-    public int Count => array.Length;
 }
 
