@@ -1,0 +1,14 @@
+E:\RiderProject\Lb_4\Lb_4\bin\Debug\net7.0\Lb_4.exe
+E:\RiderProject\Lb_4\Lb_4\bin\Debug\net7.0\Lb_4.deps.json
+E:\RiderProject\Lb_4\Lb_4\bin\Debug\net7.0\Lb_4.runtimeconfig.json
+E:\RiderProject\Lb_4\Lb_4\bin\Debug\net7.0\Lb_4.dll
+E:\RiderProject\Lb_4\Lb_4\bin\Debug\net7.0\Lb_4.pdb
+E:\RiderProject\Lb_4\Lb_4\obj\Debug\net7.0\Lb_4.GeneratedMSBuildEditorConfig.editorconfig
+E:\RiderProject\Lb_4\Lb_4\obj\Debug\net7.0\Lb_4.AssemblyInfoInputs.cache
+E:\RiderProject\Lb_4\Lb_4\obj\Debug\net7.0\Lb_4.AssemblyInfo.cs
+E:\RiderProject\Lb_4\Lb_4\obj\Debug\net7.0\Lb_4.csproj.CoreCompileInputs.cache
+E:\RiderProject\Lb_4\Lb_4\obj\Debug\net7.0\Lb_4.dll
+E:\RiderProject\Lb_4\Lb_4\obj\Debug\net7.0\refint\Lb_4.dll
+E:\RiderProject\Lb_4\Lb_4\obj\Debug\net7.0\Lb_4.pdb
+E:\RiderProject\Lb_4\Lb_4\obj\Debug\net7.0\Lb_4.genruntimeconfig.cache
+E:\RiderProject\Lb_4\Lb_4\obj\Debug\net7.0\ref\Lb_4.dll
